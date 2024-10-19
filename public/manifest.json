@@ -1,7 +1,7 @@
 {
-  "name": "My Next.js PWA",
-  "short_name": "Next PWA",
-  "description": "A Progressive Web App built with Next.js",
+  "name": "Opus Dei - opusdei.me",
+  "short_name": "Opus Dei",
+  "description": "Opus Dei - opusdei.me",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
