@@ -1,6 +1,6 @@
 {
   "name": "My Next.js PWA",
-  "short_name": "NextPWA",
+  "short_name": "Next PWA",
   "description": "A Progressive Web App built with Next.js",
   "start_url": "/",
   "display": "standalone",
