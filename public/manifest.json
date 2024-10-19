@@ -1,6 +1,6 @@
 {
-  "name": "B",
-  "short_name": "C",
+  "name": "每日日課",
+  "short_name": "每日日課",
   "description": "Opus Dei - opusdei.me",
   "start_url": "/",
   "display": "standalone",
