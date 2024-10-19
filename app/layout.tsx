@@ -5,8 +5,8 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "My Next.js PWA",
-  description: "Created with Next.js 14 and Shadcn UI",
+  title: "Opus Dei",
+  description: "Created by Cyrus Tang",
   manifest: "/manifest.json",
 }
 
