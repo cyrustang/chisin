@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { cn } from "@/lib/utils"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Calendar } from "@/components/ui/calendar"
+import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 
 interface QuoteData {
   text: { text: string; language: string }[];
@@ -72,19 +73,23 @@ export function OpusDei() {
         <CardContent>
           <Popover>
             <PopoverTrigger asChild>
-              {/* ... (existing trigger button code) */}
+              <Button
+                variant={"outline"}
+                className={cn(
+                  "w-[280px] justify-start text-left font-normal",
+                  !date && "text-muted-foreground"
+                )}
+              >
+                {date ? date.toDateString() : <span>Pick a date</span>}
+              </Button>
             </PopoverTrigger>
             <PopoverContent className="w-auto p-0">
-              <div className="bg-white dark:bg-gray-800 p-4 rounded-md shadow-md">
+              <div className="bg-popover p-4 rounded-md shadow-md">
                 <Calendar
                   mode="single"
                   selected={date}
                   onSelect={setDate}
                   initialFocus
-                  className={cn(
-                    "rounded-md border",
-                    "bg-white dark:bg-gray-800" // Explicitly set light and dark mode colors
-                  )}
                 />
               </div>
             </PopoverContent>
