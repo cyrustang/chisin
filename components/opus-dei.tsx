@@ -168,7 +168,7 @@ const SaintsView = ({ saints, isDarkMode }: { saints: Saint[]; isDarkMode: boole
         ))
       ) : (
         <div className={`text-center p-6 ${isDarkMode ? 'bg-slate-800 text-slate-300' : 'bg-white text-slate-600'} rounded-lg shadow-md`}>
-          暫未有聖人資料。
+          暫時沒有聖人資料。
         </div>
       )}
     </div>
