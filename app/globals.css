@@ -21,6 +21,8 @@ html, body {
   width: 100%;
   overflow: hidden;
   position: fixed;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -31,12 +33,16 @@ body {
     rgb(var(--background-end-rgb))
   )
   rgb(var(--background-start-rgb));
+  overscroll-behavior: none;
 }
 
 /* Ensure content fills the screen on mobile devices */
 @media screen and (max-width: 767px) {
   body {
+    min-height: 100vh;
     min-height: -webkit-fill-available;
+    width: 100vw;
+    max-width: 100%;
   }
 }
 
@@ -45,4 +51,10 @@ body {
   body {
     padding-right: 0 !important;
   }
+}
+
+/* Prevent overscroll on main content */
+main {
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
