@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next"
+import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 
@@ -7,11 +7,6 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "每日日課",
   description: "Created by Cyrus Tang",
-  manifest: "/manifest.json",
-}
-
-export const viewport: Viewport = {
-  themeColor: "#000000",
 }
 
 export default function RootLayout({
@@ -22,9 +17,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="manifest" href="/manifest.json" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} flex flex-col`}>
+        <header className="sticky top-0 z-10 w-full">
+          {/* Top bar content */}
+        </header>
+
+        <main>
+          {children}
+        </main>
+
+        <nav className="sticky bottom-0 z-10 w-full">
+          {/* Bottom nav bar content */}
+        </nav>
+      </body>
     </html>
   )
 }
