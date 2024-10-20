@@ -15,16 +15,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="h-full w-full">
+    <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
       </head>
-      <body className={`${inter.className} h-full w-full flex flex-col overflow-hidden`}>
+      <body className={`${inter.className} flex flex-col`}>
         <header className="sticky top-0 z-10 w-full">
           {/* Top bar content */}
         </header>
 
-        <main className="flex-grow overflow-auto w-full">
+        <main>
           {children}
         </main>
 

@@ -16,16 +16,12 @@
   }
 }
 
-html, body {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  position: fixed;
-  margin: 0;
-  padding: 0;
+html {
+  @apply h-full w-full overflow-hidden;
 }
 
 body {
+  @apply h-full w-full overflow-hidden text-[16px] touch-manipulation;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
     to bottom,
@@ -34,27 +30,27 @@ body {
   )
   rgb(var(--background-start-rgb));
   overscroll-behavior: none;
+  -webkit-text-size-adjust: 100%;
+}
+
+main {
+  @apply flex-grow overflow-y-auto overflow-x-hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Ensure content fills the screen on mobile devices */
 @media screen and (max-width: 767px) {
+  html, body {
+    @apply h-screen w-screen max-w-full;
+  }
+}
+
+/* Target Samsung Android browsers specifically */
+@supports (-webkit-touch-callout: none) {
+  html, body {
+    height: -webkit-fill-available;
+  }
   body {
-    min-height: 100vh;
     min-height: -webkit-fill-available;
-    width: 100vw;
-    max-width: 100%;
   }
-}
-
-/* Remove right padding when zoomed out */
-@media screen and (min-width: 768px) {
-  body {
-    padding-right: 0 !important;
-  }
-}
-
-/* Prevent overscroll on main content */
-main {
-  overscroll-behavior: contain;
-  -webkit-overflow-scrolling: touch;
 }
