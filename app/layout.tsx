@@ -5,7 +5,7 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Opus Dei - opusdei.me",
+  title: "每日日課",
   description: "Created by Cyrus Tang",
   manifest: "/manifest.json",
 }
@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="zh">
       <head>
         <link rel="manifest" href="/manifest.json" />
       </head>
