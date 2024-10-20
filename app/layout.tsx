@@ -5,7 +5,7 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "每日日課",
+  title: "Opus Dei - opusdei.me",
   description: "Created by Cyrus Tang",
   manifest: "/manifest.json",
 }
