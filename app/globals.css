@@ -89,22 +89,3 @@
     @apply bg-background text-foreground;
   }
 }
-
-/* Add these new rules at the end of the file */
-@layer utilities {
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-}
-
-html, body {
-  @apply overflow-x-hidden max-w-[100vw];
-}
-
-#__next {
-  @apply overflow-x-hidden;
-}
