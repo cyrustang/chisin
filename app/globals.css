@@ -108,9 +108,3 @@ html, body {
 #__next {
   @apply overflow-x-hidden;
 }
-
-@layer utilities {
-  .sticky-top {
-    @apply sticky top-0 z-50;
-  }
-}

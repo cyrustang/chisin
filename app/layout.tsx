@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
-import { TopBar } from './components/top-bar';
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -22,12 +21,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="flex flex-col min-h-screen">
-        <TopBar />
-        <main className="flex-grow">
-          {children}
-        </main>
-      </body>
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+      </head>
+      <body className={inter.className}>{children}</body>
     </html>
   )
 }
