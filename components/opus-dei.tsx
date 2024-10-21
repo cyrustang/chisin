@@ -7,6 +7,7 @@ import { Calendar as CalendarComponent } from '@/components/ui/calendar'
 import { Button } from '@/components/ui/button'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 import { Slider } from "@/components/ui/slider"
+import JesusQuoteCard from '@/components/jesus-quote-card'
 
 type ApiResponse = {
   text: string;
@@ -156,6 +157,7 @@ const ReadingView = ({ readings, currentReadingIndex, isDarkMode }: { readings: 
 const SaintsView = ({ saints, isDarkMode }: { saints: Saint[]; isDarkMode: boolean }) => {
   return (
     <div className="p-4">
+      <JesusQuoteCard isDarkMode={isDarkMode} />
       {saints.length > 0 ? (
         saints.map((saint, index) => (
           <div key={index} className={`mb-8 ${isDarkMode ? 'bg-slate-800' : 'bg-white'} rounded-lg shadow-md p-6`}>
