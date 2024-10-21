@@ -91,7 +91,7 @@ const FloatingTopNavButtons = ({
   }
 
   return (
-    <div className="fixed top-14 left-1/2 transform -translate-x-1/2 z-10">
+    <div className="fixed top-16 left-1/2 transform -translate-x-1/2 z-40">
       <div className="flex justify-center space-x-2 py-1">
         {buttonTexts.map((text, index) => (
           <button
@@ -443,49 +443,51 @@ const OpusDeiComponent: React.FC = () => {
           color: #60a5fa !important;
         }
       `}</style>
-      <header className={`sticky top-0 z-20 ${isDarkMode ? 'bg-slate-800/80' : 'bg-white/80'} shadow-md backdrop-blur-sm`}>
-        <div className="max-w-4xl mx-auto p-2 flex justify-between items-center">
-          <div className="flex items-center space-x-2">
-            <span 
-              className="text-base font-serif cursor-pointer" 
-              onClick={() => handleDateChange(new Date())}
-            >
-              {formatDateHK(currentDate)}
-            </span>
-            <Popover open={popoverOpen} onOpenChange={setPopoverOpen}>
-              <PopoverTrigger asChild>
-                <button className={`p-2 rounded-full ${isDarkMode ? 'hover:bg-slate-700' : 'hover:bg-slate-200'}`}>
-                  <Calendar className="w-4 h-4" />
-                </button>
-              </PopoverTrigger>
-              <PopoverContent className="p-0">
-                <CalendarComponent mode="single" selected={currentDate} onSelect={handleDateChange} initialFocus />
-              </PopoverContent>
-            </Popover>
-          </div>
-          <div className="flex items-center space-x-2">
-            <FontSizeControl
-              fontSize={fontSize}
-              setFontSize={setFontSize}
-              isDarkMode={isDarkMode}
-            />
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    onClick={toggleDarkMode}
-                    className={isDarkMode ? 'text-slate-200' : 'text-slate-800'}
-                  >
-                    {isDarkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Toggle dark mode</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
+      <header className="fixed top-0 left-0 right-0 z-50 transition-colors duration-500">
+        <div className={`${isDarkMode ? 'bg-slate-800/95' : 'bg-white/95'} shadow-md backdrop-blur-sm`}>
+          <div className="max-w-4xl mx-auto p-2 flex justify-between items-center">
+            <div className="flex items-center space-x-2">
+              <span 
+                className="text-base font-serif cursor-pointer" 
+                onClick={() => handleDateChange(new Date())}
+              >
+                {formatDateHK(currentDate)}
+              </span>
+              <Popover open={popoverOpen} onOpenChange={setPopoverOpen}>
+                <PopoverTrigger asChild>
+                  <button className={`p-2 rounded-full ${isDarkMode ? 'hover:bg-slate-700' : 'hover:bg-slate-200'}`}>
+                    <Calendar className="w-4 h-4" />
+                  </button>
+                </PopoverTrigger>
+                <PopoverContent className="p-0">
+                  <CalendarComponent mode="single" selected={currentDate} onSelect={handleDateChange} initialFocus />
+                </PopoverContent>
+              </Popover>
+            </div>
+            <div className="flex items-center space-x-2">
+              <FontSizeControl
+                fontSize={fontSize}
+                setFontSize={setFontSize}
+                isDarkMode={isDarkMode}
+              />
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={toggleDarkMode}
+                      className={isDarkMode ? 'text-slate-200' : 'text-slate-800'}
+                    >
+                      {isDarkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Toggle dark mode</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            </div>
           </div>
         </div>
       </header>
@@ -501,7 +503,7 @@ const OpusDeiComponent: React.FC = () => {
         />
       )}
 
-      <main className="flex-grow flex flex-col relative max-w-4xl mx-auto w-full pt-8">
+      <main className="flex-grow flex flex-col relative max-w-4xl mx-auto w-full pt-16">
         {renderContent()}
       </main>
 
